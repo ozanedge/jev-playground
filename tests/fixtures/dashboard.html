@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Campaigns · Acme Ads Manager</title>
+<style>
+  body { font-family: system-ui; margin: 0; }
+  nav a { margin-right: 12px; }
+  .clip { display: inline-block; width: 60px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .fold { margin-top: 3000px; }
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="#campaigns">Campaigns</a>
+    <a href="#billing">Billing</a>
+    <a href="#more">More</a>
+  </nav>
+</header>
+<main>
+  <h1>Campaigns</h1>
+  <p>Spend is updated hourly. <a href="#help">Learn more</a></p>
+  <div class="error">Error: ERR_QUOTA_EXCEEDED (tenant_uuid=8f2c)</div>
+  <button>Pause campaign</button>
+  <button aria-label=""><svg width="16" height="16"><circle cx="8" cy="8" r="6"/></svg></button>
+  <button><span class="clip">Duplicate campaign with new budget</span></button>
+
+  <table>
+    <thead><tr><th>Name</th><th>Value</th><th>CTR</th></tr></thead>
+    <tbody><tr><td>Spring sale</td><td>{{campaign_value}}</td><td>2.1%</td></tr></tbody>
+  </table>
+  <div class="empty-state">No data</div>
+
+  <form>
+    <h2>Edit ad</h2>
+    <label for="budget">Daily budget (USD)</label>
+    <input id="budget" value="50">
+    <input placeholder="Enter value">
+    <button type="submit">Submit</button>
+  </form>
+
+  <div role="dialog" aria-label="Delete campaign?">
+    <p>This removes the campaign and its ads.</p>
+    <button>OK</button>
+  </div>
+
+  <p class="fold">Below the fold: only audited with --full-page.</p>
+</main>
+</body>
+</html>
